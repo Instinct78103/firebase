@@ -9,44 +9,45 @@
 <body>
 <div id="app" class="container">
     <h3>Car Item</h3>
-        <form action="" id="firebase">
-            <div class="justify-content-md-left">
-                <p>
-                    <input name="capacity" id="capacity" type="text" placeholder="Capacity">
-                </p>
-                <p>
-                    <input name="consumables" id="consumables" type="text" placeholder="Consumables">
-                </p>
-                <p>
-                    <input name="cost" id="cost" type="text" placeholder="Cost">
-                </p>
-            </div>
-            <div class="justify-content-md-left">
-                <p>
-                    <input name="crew" type="text" placeholder="Crew">
-                </p>
-                <p>
-                    <input name="length" type="text" placeholder="Length">
-                </p>
-                <p>
-                    <input name="manufactor" type="text" placeholder="Manufactor">
-                </p>
-            </div>
-            <div class="justify-content-md-center">
-                <p>
-                    <input name="max_speed" type="text" placeholder="Max Speed">
-                </p>
-                <p>
-                    <input name="model" type="text" placeholder="Model"></p>
-                <p>
-                    <input name="name" type="text" placeholder="Name">
-                </p>
-                <p>
-                    <input name="passengers" type="text" placeholder="Passengers">
-                </p>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form><br>
+    <form action="" id="firebase">
+        <div class="justify-content-md-left">
+            <p>
+                <input name="capacity" id="capacity" type="text" placeholder="Capacity">
+            </p>
+            <p>
+                <input name="consumables" id="consumables" type="text" placeholder="Consumables">
+            </p>
+            <p>
+                <input name="cost" id="cost" type="text" placeholder="Cost">
+            </p>
+        </div>
+        <div class="justify-content-md-left">
+            <p>
+                <input name="crew" type="text" placeholder="Crew">
+            </p>
+            <p>
+                <input name="length" type="text" placeholder="Length">
+            </p>
+            <p>
+                <input name="manufactor" type="text" placeholder="Manufactor">
+            </p>
+        </div>
+        <div class="justify-content-md-center">
+            <p>
+                <input name="max_speed" type="text" placeholder="Max Speed">
+            </p>
+            <p>
+                <input name="model" type="text" placeholder="Model"></p>
+            <p>
+                <input name="name" type="text" placeholder="Name">
+            </p>
+            <p>
+                <input name="passengers" type="text" placeholder="Passengers">
+            </p>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <br>
     <p>Последние обновленные данные:</p>
     <ul id="list"></ul>
     <pre id="object"></pre>
@@ -82,10 +83,10 @@
     const dbRefObject = firebase.database().ref('swapi/transport')
         .limitToLast(1);
 
-    dbRefObject.on('child_added', snap =>  {
-        const li = document.createElement('li')
+    dbRefObject.on('child_added', snap => {
+        const li = document.createElement('li');
         li.innerText = JSON.stringify(snap.val().fields);
-        ulList.appendChild(li)
+        ulList.appendChild(li);
     });
 
 </script>
